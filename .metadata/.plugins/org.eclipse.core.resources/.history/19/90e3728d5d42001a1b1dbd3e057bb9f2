@@ -1,0 +1,24 @@
+package test;
+
+
+import org.springframework.stereotype.Repository;
+import org.springframework.web.servlet.mvc.Controller;
+
+@org.springframework.stereotype.Controller
+public class TestController  {
+@Repository("/test.do")
+	@Override
+	public ModelAndView test() { 
+		System.out.println("어노테이션 컨트롤러 요청 완료");
+		
+		ModelAndView mav = new ModelAndView();
+		
+	
+		
+	
+		mav.setViewName("test/result"); 
+}
+	
+
+
+}

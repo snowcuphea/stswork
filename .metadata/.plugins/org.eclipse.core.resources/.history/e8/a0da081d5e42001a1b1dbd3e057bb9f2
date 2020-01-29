@@ -1,0 +1,19 @@
+package test;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.AbstractController;
+
+public class IndexController{
+
+	public String main() {
+		System.out.println("어노테이션 기반 컨트롤러");
+		return "test/index";
+	}
+		
+	
+	
+
+}

@@ -1,0 +1,20 @@
+package member;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
+
+@Controller
+public class SearchController {
+
+@Repository("/search.do")
+	
+
+		String search = req.getParameter("search");
+		System.out.println("�˻��� : "+search);
+		
+		
+		return new ModelAndView("test/index") ;
+	
+
+	
+}
