@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<!-- 템플릿 등록 -->
+
+	<definition name="indexTemplate"
+		template="/WEB-INF/layout/index.jsp">
+		<put-attribute name="top" value="/WEB-INF/include/top.jsp" />
+		<put-attribute name="content" value="/WEB-INF/include/mainContent.jsp"/>
+	</definition>
+	
+	<definition name="mainTemplate" template="/WEB-INF/layout/mainLayout.jsp">
+		<put-attribute name="top" value="/WEB-INF/include/top.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/menu/pub_menu.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/emp/login.jsp"/>
+	</definition>
+	
+	<definition name="index" extends="indexTemplate"> </definition><!-- mainTemplate를 
+		기반으로 index를 만들겠다 라는 뜻 -->
+	
+	<definition name="login" extends="mainTemplate"></definition>
+
+	
+
+</tiles-definitions>

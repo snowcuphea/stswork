@@ -35,6 +35,6 @@
 	
 	<definition name="menu/jdbc" extends="mainTemplate">
 		<put-attribute name="menu"
-			value="/WEB-INF/menu/spring_jdbc.jsp" /><!-- advanced_menu.jsp로 menu영역만 바꾸겠다 라는 뜻 -->
+			value="/WEB-INF/menu/spring_jdbc.jsp" /><!-- spring_jdbc.jsp로 menu영역만 바꾸겠다 라는 뜻 -->
 	</definition>
 </tiles-definitions>

@@ -1,4 +1,2 @@
 #Tomcat publish data
-#Wed Jan 29 18:05:07 KST 2020
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\LG\\.m2\\repository\\org\\springframework\\spring-web\\4.2.4.RELEASE\\spring-web-4.2.4.RELEASE.jar=WEB-INF/lib/spring-web-4.2.4.RELEASE.jar
-org.eclipse.jst.jee.server\:/binary\:C\:\\iot\\programming\\stswork\\springmvc\\WebContent\\WEB-INF\\lib\\spring-web-4.2.4.RELEASE.jar=WEB-INF/lib/spring-web-4.2.4.RELEASE.jar
+#Sat Feb 01 14:36:19 KST 2020
