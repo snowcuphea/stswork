@@ -7,8 +7,40 @@
 	<select id="listall" resultType="board">
 		select * from board
 	</select>
+
+	<select id="categorySearch" resultType="board"
+		parameterType="String">
+		select * from board where category=#{category}
+	</select>
+	
+
+
 	<insert id="insert" parameterType="board">
-		insert into board values(board_seq.nextval,'jang',#{title},#{content},sysdate,#{category},0)
-		
+		insert into board
+		values(board_seq.nextval,'jang',#{title},#{content},sysdate,#{category},0)
+
 	</insert>
+	
+	<!--  파라미터는 컬럼명과 컬럼값(내가 입력한 값)이 한쌍으로 들어가야 한다. 따라서 키,밸류 한쌍으로 맵으로 관리한다.  -->
+	<select id="dynamicSearch" resultType ="board" parameterType="Map" >
+		select * from board
+		
+		<where>
+			<if test="tag=='title' and search!='' "> <!-- daoImpl에서 put할 때 준 이름 , tag값은 jsp파일에 있는 value값 -->
+				title like '%' || #{search} || '%'
+			</if>
+				<if test="tag=='id' and search!='' "> 
+				id like '%' || #{search} || '%'
+			</if>
+				<if test="tag=='content' and search!='' "> 
+				content like '%' || #{search} || '%'
+			</if>
+				<if test="tag=='write_date' and search!='' "> 
+					<![CDATA[
+					to_date(write_date) <= #{search}
+					]]> <!-- CDATA 섹션 내부에서 정의하는 코드에 문자열이 있더라도, 태그로 인식시키지 않고 문자열로 인식시킨다. -->
+			</if>
+		</where>
+	
+	</select>
 </mapper>

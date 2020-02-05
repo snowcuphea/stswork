@@ -22,6 +22,19 @@
 		기반으로 index를 만들겠다 라는 뜻 -->
 	
 	<definition name="login" extends="mainTemplate"></definition>
+	
+	<!-- 로그인 성공 후 뷰 . empcontroller에도 login/ok로 걸어놓는다.-->
+	<definition name="login/ok" extends="mainTemplate">
+		<put-attribute name="menu" value="/WEB-INF/menu/insa_menu.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/emp/mypage.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 사원등록 뷰 -->
+	
+	<definition name="emp/insert" extends="mainTemplate">
+	<put-attribute name="menu" value="/WEB-INF/menu/insa_menu.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/emp/register.jsp"></put-attribute>
+	</definition>
 
 	
 

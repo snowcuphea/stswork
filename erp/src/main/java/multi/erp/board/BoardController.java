@@ -15,18 +15,20 @@ public class BoardController {
 	
 	//요청 path
 	@RequestMapping("/board/list.do")
-	public ModelAndView boardList() {
+	public ModelAndView boardList(String category) {
+		System.out.println("category=>"+category); //카테고리 제대로 넘어오나 안넘어오나 확인하기 위해 쓴 문장
 		ModelAndView mav = new ModelAndView();
 		
 		//1.요청정보 추출
 		//2.비지니스메소드 호출
-		List<BoardVO> list = service.boardList();
+		List<BoardVO> list = service.boardList(category);
 		System.out.println(list);
 		
 		//3.데이터공유 - jsp페이지에서 응답뷰만들때 사용
 		//addObject 로 한 기본값은 request scope에 저장된다. 
 		//mav.addObject(attributeName, attributeValue)
 		mav.addObject("boardlist", list);
+		mav.addObject("category", category);
 		
 		//4.뷰의 이름을 등록
 		mav.setViewName("board/list"); //tiles에 등록하는 이름과 일치
@@ -47,7 +49,17 @@ public class BoardController {
 		System.out.println("*****************************"+board);
 		int result = service.insert(board);
 		System.out.println("###################" + result);
-		return "redirect:/board/list.do"; //글 쓴 뒤 글 목록을 보여준다.
+		return "redirect:/board/list.do?category=all"; //글 쓴 뒤 글 목록을 보여준다.
+	}
+	
+	@RequestMapping(value="/board/search.do")
+	public ModelAndView search(String tag, String search) {
+		ModelAndView mv = new ModelAndView();
+		List<BoardVO> list = service.searchList(tag, search);
+		mv.addObject("boardlist", list);
+		mv.setViewName("board/list");
+		return mv;
+		
 	}
 	
 

@@ -6,11 +6,12 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="multi.erp.board.BoardVO" alias="board" />
+		<typeAlias type="multi.erp.emp.MemberVO" alias="emp" />
 	</typeAliases><!-- type에 vo객체를 써준다 -->
 
 	<mappers>
 		<mapper resource="mapper/board.xml" />
-
+		<mapper resource="mapper/emp.xml" />
 	</mappers>
 
 

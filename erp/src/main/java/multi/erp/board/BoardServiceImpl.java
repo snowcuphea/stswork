@@ -16,8 +16,17 @@ public class BoardServiceImpl implements BoardService {
 	BoardDAO dao; //BoardDAO를 autowired시킬것이다.
 
 	@Override
-	public List<BoardVO> boardList() {
-		return dao.boardList();
+	public List<BoardVO> boardList(String category) {
+		List<BoardVO> list=null;
+		
+		if(category!=null) {//카테고리가 널이 아니어야 작업할 수 있다.
+			if(category.equals("all")) {
+				list=dao.boardList();
+			}else {
+				list=dao.categorySearch(category);
+			}
+	}
+		return list;
 	}
 
 	@Override
@@ -41,7 +50,7 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public List<BoardVO> searchList(String tag, String search) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.searchList(tag, search);
 	}
 
 	@Override

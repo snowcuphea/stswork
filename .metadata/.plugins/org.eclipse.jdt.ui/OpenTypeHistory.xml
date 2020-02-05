@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=erp/src\/main\/java&lt;multi.erp.board{BoardDAO.java[BoardDAO" modifiers="513" timestamp="1580437806444"/>
-<typeInfo handle="=erp/src\/main\/java&lt;multi.erp.board{BoardService.java[BoardService" modifiers="513" timestamp="1580448402216"/>
+<typeInfo handle="=erp/src\/main\/java&lt;multi.erp.board{BoardService.java[BoardService" modifiers="513" timestamp="1580690109963"/>
+<typeInfo handle="=erp/src\/main\/java&lt;multi.erp.board{BoardDAO.java[BoardDAO" modifiers="513" timestamp="1580689457874"/>
+<typeInfo handle="=erp/src\/main\/java&lt;multi.erp.emp{EmpDAO.java[EmpDAO" modifiers="513" timestamp="1580697197240"/>
+<typeInfo handle="=erp/src\/main\/java&lt;multi.erp.emp{EmpService.java[EmpService" modifiers="513" timestamp="1580697166585"/>
 </typeInfoHistroy>
